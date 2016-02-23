@@ -11,6 +11,11 @@ routes.config(function($stateProvider, $urlRouterProvider) {
       controller: 'taskListController',
       templateUrl: "task-list/controller.html"
     })
+    .state('task', {
+      url: "/{id}",
+      controller: 'taskShowController',
+      templateUrl: "task-list/show.html"
+    })
   $urlRouterProvider.otherwise("/")
 })
 

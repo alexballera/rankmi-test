@@ -4,7 +4,7 @@ export default function(ngComponent) {
   function TaskListFactory($resource) {
     let Model = {
       getAll() {
-        return JSON.parse(window.localStorage("db")) || { tasks: [] }
+        return JSON.parse(window.localStorage.getItem("db")) || { tasks: [] }
       },
       create(task) {
         var all = this.getAll()
@@ -23,8 +23,11 @@ export default function(ngComponent) {
       change_status(index, status) {
         var all = this.getAll()
         all.tasks[index].status = status
+        window.localStorage.setItem("db", JSON.stringify(all))
       }
     }
+
+    window.tasksList = Model
     return Model
   }
 }
