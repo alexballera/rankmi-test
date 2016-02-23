@@ -64,5 +64,27 @@ $ getPosition("AB")
 <sup>***La entrada a la función debe contener sólo letras (a-z)***</sup>
 
 ##Ejercicio 3
+- Ir a la carpeta del ejercicio
+```{r, engine='bash', count_lines}
+$ cd  ejercicio3
+```
+- Correr node
+```{r, engine='bash', count_lines}
+$ node
+```
+<sup>***Debes tener instalado node***</sup>
 
+- Importar index.js
+
+```{r, engine='bash', count_lines}
+$ var findSumNumbers = require "./index.js"
+```
+
+- Llamar la función con la el arreglo de numeros y el target, Ej: numbers=[2, 7, 11, 15], target=9
+
+```{r, engine='bash', count_lines}
+$ findSumNumbers([2, 7, 11, 15], 9)
+```
+
+<sup>***Si no encuentra dos números que sumen target retorna null***</sup>
 ##Ejercicio 4
