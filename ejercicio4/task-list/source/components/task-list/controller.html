@@ -1,13 +1,13 @@
 <div class="home-page">
   <h1>Lista de Tareas</h1>
   <ul>
-    <li ng-repeat="(key, value) in tareas"> 
+    <li ng-repeat="(key, value) in tareas">
       <a ui-sref="task({id: key})">{{ value.name }}</a>
     </li>
   </ul>
 
   <form ng-submit="addTask()">
-    <input type="text" ng-model="tarea.name">
-    <button type="submit">Agregar Tarea</button>
+    <input type="text" ng-model="tarea.name" class="inpt-solid">
+    <button type="submit" class="btn btn-green">Agregar Tarea</button>
   </form>
 </div>

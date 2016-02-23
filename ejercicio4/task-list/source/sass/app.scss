@@ -1,5 +1,100 @@
 @import "../components/**/*.scss";
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700);
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+$font-color: #2F2F2F;
+$green-color: #0e9f68;
+$font-raleway: 'Raleway', sans-serif;
+body{
+	font-family: $font-raleway;
+	margin: 0;
+	color: $font-color;
+}
+header{
+	text-align:center;
+	background-color: $font-color;
+	color: whitesmoke;
+	padding: 30px 0;
+	p{
+		text-transform: uppercase;
+		font-weight: 200;
+		font-size: 26px;
+		width: 160px;
+		height: 145px;
+		padding: 20px;
+		margin: 0 auto;
+		text-align: center;
+		border: 3px solid whitesmoke;
+		span{
+			display: block;
+			line-height: 48px;
+			b{
+				font-weight: 600;
+			}
+			&.rank{
+				letter-spacing: 8px;
+			}
+			&.list{
+				letter-spacing: 7px;
+			}
+			&.tasks{
+				letter-spacing: 13px;
+			}
+		}
+	}
+}
+.home-page{
+	text-align: center;
+	h1{
+		padding-top: 30px;
+	}
+}
+
+h1{
+	color: $green-color;
+	font-size: 26px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.btn{
+	padding: 8px 16px;
+	&.btn-green{
+		font-size: 18px;
+		font-family: $font-raleway;
+		background-color: $green-color;
+		color: whitesmoke;
+		border: none;
+		display: block;
+		width: 250px;
+		margin: 10px auto;
+
+	}
+}
+.inpt-solid{
+  display: inline-block;
+  padding: 7px 16px;
+  border: lightgrey 1px solid;
+  width: 215px;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 10px 0;
+	li{
+		a{
+			color: #A3A0A0;
+			text-decoration: none;
+		}
+	}
+}
+footer{
+	text-align: center;
+	a{
+		color: $green-color;
+		text-decoration: none;
+	}
 }
