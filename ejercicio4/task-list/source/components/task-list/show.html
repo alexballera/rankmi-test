@@ -1,4 +1,28 @@
-<div class="home-page">
+<div class="task-page">
   <h1>Tarea</h1>
-  <p>{{tarea.name}}</p>
+
+  <div class="tarea-container">
+    <div class="tarea-desc">
+      <a href="#" class="check-comment" ng-class="{strike: tarea.done}"></a>
+      <p>{{tarea.name}}</p>
+    </div>
+    <div class="">
+      <form ng-submit="addComment()">
+        <textarea rows="4" ng-model="comment.text"></textarea>
+        <button type="submit" class="btn btn-green">Agregar Comentario</button>
+      </form>
+    </div>
+    
+    <h4><i class="fa fa-commenting-o"></i> Comentarios ({{tarea.comments.length}})</h4>
+    <ul>
+      <li ng-repeat="(key, value) in comments">      
+        <p class="">{{ value.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="volver-tarea">
+    <a ui-sref="home" href="" class="btn btn-green">
+      <i class="fa fa-th-list"></i> Volver
+    </a>
+  </div>
 </div>

@@ -3,11 +3,17 @@ export default function(ngComponent) {
 
   function TaskListController($scope, taskListFactory) {
     $scope.tareas = taskListFactory.getAll().tasks
+    $scope.tarea = {name: "", done: false, comments: []}
 
-    $scope.tarea = {name: "", status: "todo"}
     $scope.addTask = function(){
-      taskListFactory.create($scope.tarea)
-      $scope.tarea.name= ""
+      if(!$scope.tarea.name == ""){
+        taskListFactory.create($scope.tarea)
+        $scope.tarea.name = ""
+        $scope.tareas = taskListFactory.getAll().tasks
+      }
+    }
+    $scope.checkTask = function(key){
+      var task = taskListFactory.changeStatus(key);
       $scope.tareas = taskListFactory.getAll().tasks
     }
   }

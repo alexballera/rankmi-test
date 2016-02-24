@@ -70,6 +70,7 @@ header{
 }
 .home-page{
 	text-align: center;
+	color: $font-color;
 	h1{
 		padding-top: 30px;
 	}
@@ -80,10 +81,12 @@ h1{
 	font-size: 26px;
 	font-weight: 600;
 	text-transform: uppercase;
+	text-align: center;
 }
 
 .btn{
 	padding: 8px 16px;
+	text-decoration: none;
 	&.btn-green{
 		font-size: 18px;
 		font-family: $font-raleway;
@@ -112,7 +115,17 @@ ul{
 	text-align: left;
 	width: 50%;
 	margin: 0 auto;
-	// Cambiar para responsive
+
+	@media (max-width: 768px) { 
+		width: 95%;
+	}
+	@media (min-width: 769px) and (max-width: 992px) { 
+		width: 80%;
+	}
+	@media (min-width: 993px) and (max-width: 1200px) { 
+		width: 80%;
+	}
+
 	li{
 		display: block;
 		a{
@@ -126,16 +139,28 @@ ul{
 			}
 			&.tarea-desc{
 				width: 86%;
+				@media (max-width: 768px) { 
+					width: 72%;
+				}
+				&.strike{
+					text-decoration: line-through;
+				}
 			}
 			&.comment-icon{
 				border: none;
-				width: 4%;
+				width: 5%;
+				@media (max-width: 768px) { 
+					width: 10%;
+				}
 			}
 			&.check-comment{
 				padding: 6px;
 				border: #A3A0A0 solid 1px;
 				border-radius: 50%;
 				margin: 0 4px;
+				&.strike{
+					background-color: #A3A0A0;
+				}
 			}
 		}
 	}
@@ -148,11 +173,77 @@ footer{
 	}
 }
 
-.add-tarea{
+.add-tarea, .volver-tarea{
 	position: fixed;
 	background-color: black;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	padding: 10px;
+}
+.volver-tarea{
+	text-align: center;
+	.btn{
+		margin-right: 20px;
+		text-align: left;
+	}
+}
+.tarea-container{
+	width: 50%;
+	margin: 0 auto;
+	@media (max-width: 768px) { 
+		width: 95%;
+	}
+	@media (min-width: 769px) and (max-width: 992px) { 
+		width: 80%;
+	}
+	@media (min-width: 993px) and (max-width: 1200px) { 
+		width: 80%;
+	}
+	text-align: left;
+	p{
+		display: inline-block;
+		width: 90%;
+	}
+	a{
+		color: #A3A0A0;
+		text-decoration: none;
+		display: inline-block;
+		padding: 16px 12px 8px 0;
+		border-bottom: #E3E3E3 solid 1px;
+		&.check-comment{
+			padding: 6px;
+			border: #A3A0A0 solid 1px;
+			border-radius: 50%;
+			margin: 0 4px;
+			&.strike{
+				background-color: #A3A0A0;
+			}
+		}
+	}
+	textarea{
+		width: 100%;
+	}
+	.btn-green{
+		float: right;
+		margin: 10px 0;
+
+	}
+	form{
+		&:before, &:after{
+			content: '';
+			clear: both;
+			display: block;
+		}
+	}
+	ul{
+		width: 100%;
+		p{
+			color: #A3A0A0;
+			text-decoration: none;
+			padding: 16px 12px 8px 0;
+			border-bottom: #E3E3E3 solid 1px;
+			margin: 0;
+		}
+	}
 }

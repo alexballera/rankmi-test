@@ -9,22 +9,36 @@ export default function(ngComponent) {
       create(task) {
         var all = this.getAll()
         all.tasks.push(task)
-        window.localStorage.setItem("db", JSON.stringify(all))
+        saveLocalStorage(all)
       },
       remove(index) {
         var all = this.getAll()
         all.tasks.splice(index, 1)
-        window.localStorage.setItem("db", JSON.stringify(all))
+        saveLocalStorage(all)
       },
       get(index) {
         var all = this.getAll()
         return all.tasks[index]
       },
-      change_status(index, status) {
+      changeStatus(index) {
         var all = this.getAll()
-        all.tasks[index].status = status
-        window.localStorage.setItem("db", JSON.stringify(all))
+        all.tasks[index].done = !all.tasks[index].done
+        saveLocalStorage(all)
+      },
+      addComment(index, comment) {
+        var all = this.getAll()
+        var task = all.tasks[index]
+        console.log(task)
+        task.comments.push(comment)
+        saveLocalStorage(all) 
+      },
+      getAllComments(index){
+        var task = this.get(index)
+        return task.comments.reverse()
       }
+    }
+    function saveLocalStorage(all){
+      window.localStorage.setItem("db", JSON.stringify(all))
     }
 
     window.tasksList = Model
