@@ -88,3 +88,20 @@ $ findSumNumbers([2, 7, 11, 15], 9)
 
 <sup>***Si no encuentra dos números que sumen target retorna null***</sup>
 ##Ejercicio 4
+- Ir a la carpeta del ejercicio
+```{r, engine='bash', count_lines}
+$ cd  ejercicio4/task-list/
+```
+- Instalar depedencias
+```{r, engine='bash', count_lines}
+$ npm install
+```
+<sup>***Debes tener instalado npm***</sup>
+
+- Levantar servidor
+```{r, engine='bash', count_lines}
+$ gulp serve
+```
+<sup>***Debes tener instalado gulp***  ``` ($ npm install -g gulp) ```  </sup>
+
+- Si todo está OK,la aplicación debe estar en http://localhost:8000/#/
