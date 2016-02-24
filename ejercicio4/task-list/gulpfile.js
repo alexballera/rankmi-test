@@ -28,7 +28,7 @@ var source_paths = {
   all_sass: './source/**/*.scss',
   all_js: './source/**/*.js',
   all_html: './source/**/*.html',
-  images: './sources/images/**/*',
+  images: './source/images/**/*',
   html_index: './source/index.html',
   partials: './source/components/**/*.html',
   partials_dest: './source/partials',
