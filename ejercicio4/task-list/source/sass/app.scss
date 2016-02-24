@@ -15,9 +15,31 @@ body{
 }
 header{
 	text-align:center;
-	background-color: $font-color;
+	background-image: url('../images/vintage-mug-tea-photos-wood-texture.jpg');
+	background-position: center;
+	background-size: cover;
 	color: whitesmoke;
 	padding: 30px 0;
+	position: relative;
+	height: 192px;
+	&:before{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(black, 0.9);
+		top: 0;
+		left: 0;
+	}
+	.p-container{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		padding: 30px 0;
+	}
 	p{
 		text-transform: uppercase;
 		font-weight: 200;
@@ -68,26 +90,53 @@ h1{
 		background-color: $green-color;
 		color: whitesmoke;
 		border: none;
-		display: block;
+		display: inline-block;
 		width: 250px;
-		margin: 10px auto;
-
+		margin-left: 20px;
 	}
 }
 .inpt-solid{
   display: inline-block;
-  padding: 7px 16px;
+  padding: 9px 16px 7px 16px;
   border: lightgrey 1px solid;
   width: 215px;
+  background-color: black;
+  color: #5E5E5E;
+  font-family: $font-raleway;
+  font-size: 16px;
 }
 ul{
 	list-style: none;
 	margin: 0;
 	padding: 10px 0;
+	text-align: left;
+	width: 50%;
+	margin: 0 auto;
+	// Cambiar para responsive
 	li{
+		display: block;
 		a{
 			color: #A3A0A0;
 			text-decoration: none;
+			display: inline-block;
+			padding: 16px 12px 8px 0;
+			border-bottom: #E3E3E3 solid 1px;
+			&:hover{
+				color: #2F2F2F;
+			}
+			&.tarea-desc{
+				width: 86%;
+			}
+			&.comment-icon{
+				border: none;
+				width: 4%;
+			}
+			&.check-comment{
+				padding: 6px;
+				border: #A3A0A0 solid 1px;
+				border-radius: 50%;
+				margin: 0 4px;
+			}
 		}
 	}
 }
@@ -97,4 +146,13 @@ footer{
 		color: $green-color;
 		text-decoration: none;
 	}
+}
+
+.add-tarea{
+	position: fixed;
+	background-color: black;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px;
 }
