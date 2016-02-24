@@ -96,6 +96,10 @@ h1{
 		display: inline-block;
 		width: 250px;
 		margin-left: 20px;
+		@media (max-width: 768px) { 
+			margin-left: 0px;
+			margin-top: 10px;
+		}
 	}
 }
 .inpt-solid{

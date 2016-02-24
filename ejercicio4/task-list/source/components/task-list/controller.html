@@ -5,7 +5,7 @@
     <li ng-repeat="(key, value) in tareas">
       <a href="#" class="check-comment" ng-click="checkTask(key)" ng-class="{strike: value.done}"></a>
       <a ui-sref="task({id: key})" class="tarea-desc" ng-class="{strike: value.done}">{{ value.name }}</a>
-      <a href="#" class="comment-icon"><i class="fa fa-commenting-o"></i> {{value.comments.length}}</a>
+      <a ui-sref="task({id: key})" class="comment-icon"><i class="fa fa-commenting-o"></i> {{value.comments.length}}</a>
     </li>
   </ul>
 
